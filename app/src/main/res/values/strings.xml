@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Qatrat dem</string>
+    <string name="wait">Please wait..</string>
+    <string name="enter_valid_email">Please enter a valid email</string>
+    <string name="enter_password">Please enter your password</string>
+    <string name="login_in">Login in..</string>
+    <string name="checking_user">Checking user information..</string>
+    <string name="log_in">Login</string>
+    <string name="recover">Recover</string>
+    <string name="sending_instructions">Sending instructions to your email</string>
+    <string name="instructions_sent">Instructions were successfully sent to your email, please check your inbox to proceed</string>
+</resources>
