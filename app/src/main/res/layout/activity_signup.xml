@@ -1,9 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background_radian"
     android:layout_height="match_parent"
     tools:context=".activities.SignupActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pictureIV"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/circle_white"
+            android:src="@drawable/ic_person_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/fullnameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:drawablePadding="8dp"
+            android:hint="@string/fullname"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pictureIV" />
+
+
+        <EditText
+            android:id="@+id/phoneET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_phone_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/phone_number"
+            android:padding="16dp"
+            android:ems="10"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:textColorHint="#eee"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullnameET" />
+
+        <LinearLayout
+            android:id="@+id/addressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneET">
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/wilayaET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_shape"
+                android:drawableStart="@drawable/ic_wilaya_white"
+                android:drawablePadding="8dp"
+                android:hint="@string/wilaya"
+                android:padding="16dp"
+                android:inputType="textPostalAddress"
+                android:textColor="#fff"
+                android:ems="10"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#eee" />
+
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/dayraET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_shape"
+                android:drawableStart="@drawable/ic_dayra_white"
+                android:drawablePadding="8dp"
+                android:hint="@string/dayra"
+                android:ems="10"
+                android:padding="16dp"
+                android:inputType="textPostalAddress"
+                android:textColor="#fff"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#eee" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/genderET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_gender_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/gender"
+            android:padding="16dp"
+            android:ems="10"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:textColorHint="#eee"
+            android:drawableEnd="@drawable/ic_down_arrow_white"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressLayout" />
+
+        <EditText
+            android:id="@+id/typeET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_user_type_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/user_type"
+            android:padding="16dp"
+            android:ems="10"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:textColorHint="#eee"
+            android:drawableEnd="@drawable/ic_down_arrow_white"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/genderET" />
+
+        <EditText
+            android:id="@+id/bloodET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_blood_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/blood_type"
+            android:padding="16dp"
+            android:ems="10"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:textColorHint="#eee"
+            android:drawableEnd="@drawable/ic_down_arrow_white"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typeET" />
+
+        <LinearLayout
+            android:id="@+id/whLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bloodET">
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/weightET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_shape"
+                android:drawableStart="@drawable/ic_weight_white"
+                android:drawablePadding="8dp"
+                android:hint="@string/weight"
+                android:padding="16dp"
+                android:inputType="numberDecimal"
+                android:textColor="#fff"
+                android:ems="10"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#eee" />
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/heightET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_shape"
+                android:drawableStart="@drawable/ic_height_white"
+                android:drawablePadding="8dp"
+                android:hint="@string/height"
+                android:ems="10"
+                android:padding="16dp"
+                android:inputType="numberDecimal"
+                android:textColor="#fff"
+                android:textColorHighlight="#fff"
+                android:textColorHint="#eee" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/diseasesET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_diseases_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/diseases"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textPersonName|textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whLayout" />
+
+        <EditText
+            android:id="@+id/donationsET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_donations_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/previous_donations"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textPersonName|textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diseasesET" />
+
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_email_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/email"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donationsET" />
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_password_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/password"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailET" />
+
+        <EditText
+            android:id="@+id/confirmPasswordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/input_shape"
+            android:drawableStart="@drawable/ic_password_white"
+            android:drawablePadding="8dp"
+            android:hint="@string/confirm_password"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:textColorHighlight="#fff"
+            android:ems="10"
+            android:textColorHint="#eee"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordET" />
+
+        <Button
+            android:id="@+id/signupBtn"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/btn_white"
+            android:padding="16dp"
+            android:shadowColor="@android:color/transparent"
+            android:text="@string/signup"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordET" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

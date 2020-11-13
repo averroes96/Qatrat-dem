@@ -9,4 +9,19 @@
     <string name="recover">Recover</string>
     <string name="sending_instructions">Sending instructions to your email</string>
     <string name="instructions_sent">Instructions were successfully sent to your email, please check your inbox to proceed</string>
+    <string name="email">Email Address</string>
+    <string name="fullname">Fullname</string>
+    <string name="phone_number">Phone number</string>
+    <string name="wilaya">Wilaya</string>
+    <string name="dayra">Dayra</string>
+    <string name="gender">Gender</string>
+    <string name="user_type">User type</string>
+    <string name="blood_type">Blood type</string>
+    <string name="weight">Weight (Kg)</string>
+    <string name="height">Height (cm)</string>
+    <string name="diseases">Diseases or sensibilities?</string>
+    <string name="previous_donations">Any previous donations?</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confrim password</string>
+    <string name="signup">Sign up</string>
 </resources>
