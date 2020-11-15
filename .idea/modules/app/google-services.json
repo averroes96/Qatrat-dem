@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "350611801359",
+    "firebase_url": "https://qatart-dem-624d2.firebaseio.com",
+    "project_id": "qatart-dem-624d2",
+    "storage_bucket": "qatart-dem-624d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350611801359:android:7605fdcccd39d54a4f2a7a",
+        "android_client_info": {
+          "package_name": "com.averroes.qataratdem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350611801359-60qs73qt5gteersat7d2o96blukgjkbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.averroes.qataratdem",
+            "certificate_hash": "ef4c0f364155fcb829ac5997ab240e97ec6850cd"
+          }
+        },
+        {
+          "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxDvsqdVFMAlsH6cHk6fULb3uJHSLAWYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350611801359:android:da6923d1ae797dde4f2a7a",
+        "android_client_info": {
+          "package_name": "com.averroes.qatartdem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxDvsqdVFMAlsH6cHk6fULb3uJHSLAWYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350611801359:android:35448a18b928a1514f2a7a",
+        "android_client_info": {
+          "package_name": "com.averroes.qatratdem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxDvsqdVFMAlsH6cHk6fULb3uJHSLAWYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350611801359-1dsob1tm7hctf91pdft03bbd9o8pit34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

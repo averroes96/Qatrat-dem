@@ -24,4 +24,44 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confrim password</string>
     <string name="signup">Sign up</string>
+    <string name="birth_date">Birth date</string>
+    <string name="enter_valid_name">Please enter a valid name</string>
+    <string name="enter_valid_phone">Please enter a valid phone number</string>
+    <string name="short_password">Password length must be longer than 6 characters !</string>
+    <string name="unmatched_passwords">Passwords do not match !</string>
+    <string name="enter_location">Please specify your current location</string>
+    <string name="your_gender">Your gender?</string>
+    <string name="your_type">You are:</string>
+    <string name="enter_valid_ibm">Please enter a valid height and weight ( numbers only allowed )</string>
+    <string name="creating_account">Creating your account..</string>
+    <string name="saving_info">Saving your information..</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="pick_image">Chose a picture:</string>
+    <string name="location_needed">Please enable location to locate your current position</string>
+    <string name="camera_required">To take pictures please grant access to camera</string>
+    <string name="storage_required">Storage access is required to select pictures from gallery</string>
+    <string name="enable_location">Please enable location detection !</string>
+    <string name="your_blood">Your blood:</string>
+    <string name="forgot_password_msg">Need to reset your password? No problem! Just enter your email and click on \"Recover\", we\'ll email instructions for setting a new one</string>
+    <string name="send">Send</string>
+    <string-array name="genders">
+        <item name="N/A">Not specified</item>
+        <item name="male">Male</item>
+        <item name="female">Female</item>
+    </string-array>
+    <string-array name="user_type">
+        <item name="donner">Donner</item>
+        <item name="patient">Patient</item>
+    </string-array>
+    <string-array name="blood_type">
+        <item name="o_plus">O+</item>
+        <item name="o_minus">O-</item>
+        <item name="a_plus">A+</item>
+        <item name="a_minus">A-</item>
+        <item name="b_plus">B+</item>
+        <item name="b_minus">B-</item>
+        <item name="ab_plus">AB+</item>
+        <item name="ab_minus">AB-</item>
+    </string-array>
 </resources>
