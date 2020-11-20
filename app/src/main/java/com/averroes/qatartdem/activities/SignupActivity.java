@@ -154,7 +154,6 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                 choiceDialog(genderET, R.string.your_gender, R.array.genders);
             }
         });
-        genderET.setText(getResources().getStringArray(R.array.genders)[0]);
 
         typeET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +161,6 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                 choiceDialog(typeET, R.string.your_type, R.array.user_type);
             }
         });
-        typeET.setText(getResources().getStringArray(R.array.user_type)[0]);
 
         bloodET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,7 +168,6 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                 choiceDialog(bloodET, R.string.your_blood, R.array.blood_type);
             }
         });
-        bloodET.setText(getResources().getStringArray(R.array.blood_type)[0]);
 
         birthDateET.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +218,14 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
         dayra = dayraET.getText().toString().trim();
         gender = genderET.getText().toString().trim();
         birthDate = birthDateET.getText().toString().trim();
+        if(typeET.getText().toString().trim().equals(""))
+            type = "";
+        else if(typeET.getText().equals(getResources().getStringArray(R.array.user_type)[0]))
+            type = "donner";
+        else if(type.equals(getResources().getStringArray(R.array.user_type)[1]))
+            type = "patient";
+        else
+            type = "both";
         type = typeET.getText().toString().trim();
         blood = bloodET.getText().toString().trim();
         weight = weightET.getText().toString().trim();
@@ -233,6 +238,14 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
 
         if(TextUtils.isEmpty(fullName)){
             Toast.makeText(this, getString(R.string.enter_valid_name), Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(blood)){
+            Toast.makeText(this, getString(R.string.enter_gender), Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(type)){
+            Toast.makeText(this, getString(R.string.enter_type), Toast.LENGTH_LONG).show();
             return;
         }
         if(TextUtils.isEmpty(phone)){
@@ -297,7 +310,7 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
         data.put("dayra", dayra);
         data.put("wilaya", wilaya);
         data.put("password", password);
-        data.put("type", type.equals(getResources().getStringArray(R.array.user_type)[0])? "donner" : "patient");
+        data.put("type", type);
         data.put("birth_date", birthDate);
         data.put("timestamp", timestamp);
         data.put("blood", blood);
@@ -377,7 +390,7 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
         String[] options = { getString(R.string.camera), getString(R.string.gallery)};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.pick_image)
+        builder.setTitle(R.string.chose_source)
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
