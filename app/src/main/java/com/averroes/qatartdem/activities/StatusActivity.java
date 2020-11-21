@@ -17,7 +17,7 @@ public class StatusActivity extends AppCompatActivity {
     }
 
     public void GoToDonnors(View view) {
-        Intent intent = new Intent(this,DonnerActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

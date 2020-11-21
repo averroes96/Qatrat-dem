@@ -327,7 +327,7 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                         @Override
                         public void onSuccess(Void aVoid) {
                             progressDialog.dismiss();
-                            startActivity(new Intent(SignupActivity.this, DonnerActivity.class));
+                            startActivity(new Intent(SignupActivity.this, MainActivity.class));
                             finish();
                         }
                     })
@@ -360,7 +360,7 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(SignupActivity.this, DonnerActivity.class));
+                                                startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                                 finish();
                                             }
                                         })
@@ -368,7 +368,7 @@ public class SignupActivity extends AppCompatActivity implements CameraPermissio
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(SignupActivity.this, DonnerActivity.class));
+                                                startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                                 finish();
                                             }
                                         });
