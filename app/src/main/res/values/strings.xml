@@ -51,6 +51,7 @@
     <string name="donners">Donners</string>
     <string name="patients">Patients</string>
     <string name="make_request">Make request</string>
+    <string name="location">Location</string>
     <string-array name="genders">
         <item name="N/A">Not specified</item>
         <item name="male">Male</item>
