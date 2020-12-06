@@ -267,7 +267,7 @@
             android:background="@drawable/input_shape"
             android:drawableStart="@drawable/ic_diseases_white"
             android:drawablePadding="8dp"
-            android:hint="@string/diseases"
+            android:hint="@string/diseases_sens"
             android:padding="16dp"
             android:textColor="#fff"
             android:textColorHighlight="#fff"

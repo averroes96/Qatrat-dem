@@ -19,7 +19,8 @@
     <string name="blood_type">Blood type</string>
     <string name="weight">Weight (Kg)</string>
     <string name="height">Height (cm)</string>
-    <string name="diseases">Diseases or sensibilities?</string>
+    <string name="diseases_sens">Diseases or sensibilities?</string>
+    <string name="dis_sens">Diseases and sensibilities</string>
     <string name="previous_donations">Any previous donations?</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confrim password</string>
@@ -52,6 +53,11 @@
     <string name="patients">Patients</string>
     <string name="make_request">Make request</string>
     <string name="location">Location</string>
+    <string name="user_details">User details</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="contact_info">Contact information</string>
+    <string name="this_is_desc">This is description...</string>
+    <string name="prev_donations">Previous donations</string>
     <string-array name="genders">
         <item name="N/A">Not specified</item>
         <item name="male">Male</item>
