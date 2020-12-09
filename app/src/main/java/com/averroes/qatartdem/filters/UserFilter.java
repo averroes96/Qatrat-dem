@@ -19,11 +19,32 @@ public class UserFilter extends Filter {
 
     @Override
     protected FilterResults performFiltering(CharSequence charSequence) {
-        return null;
+
+        FilterResults results = new FilterResults();
+
+        if(charSequence != null && charSequence.length() > 0){
+            charSequence = charSequence.toString().toUpperCase();
+            ArrayList<User> filtered = new ArrayList<>();
+            for(User user : filteredUsers){
+
+                if(user.getFullname().toLowerCase().contains(charSequence)){
+                    filtered.add(user);
+                }
+            }
+            results.count = filtered.size();
+            results.values = filtered;
+        }
+        else{
+            results.count = filteredUsers.size();
+            results.values = filteredUsers;
+        }
+
+        return results;
     }
 
     @Override
     protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
+        adapter.users = (ArrayList<User>)filterResults.values;
+        adapter.notifyDataSetChanged();
     }
 }

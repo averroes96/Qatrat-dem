@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         searchBtn = findViewById(R.id.searchBtn);
+        fullnameTV = findViewById(R.id.fullnameTV);
         filterBtn = findViewById(R.id.filterBtn);
         donnersTV = findViewById(R.id.donnersTV);
         patientsTV = findViewById(R.id.patientsTV);
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         donnersRV = findViewById(R.id.donnersRV);
         patientsRV = findViewById(R.id.patientsRV);
         requestBtn = findViewById(R.id.requestBtn);
+        donnersCL = findViewById(R.id.donnersCL);
+        patientsCL = findViewById(R.id.patientsCL);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -139,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
                             fullnameTV.setText(dataSnapshot.child("fullname").getValue().toString());
                             dayra = dataSnapshot.child("dayra").getValue().toString();
-                            loadImage(dataSnapshot.child("profile_image").getValue().toString(), R.drawable.ic_person_grey, pictureIV);
+                            loadImage(dataSnapshot.child("picture").getValue().toString(), R.drawable.ic_person_grey, pictureIV);
 
                             String userType = dataSnapshot.child("type").getValue().toString();
                             if(userType.equals("both") || userType.equals("patient")) {
@@ -200,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        //adapter = new ShopAdapter(MainUserActivity.this, shops);
-                        //donnersRV.setAdapter(userAdapter);
+                        userAdapter = new UserAdapter(MainActivity.this, users);
+                        donnersRV.setAdapter(userAdapter);
                     }
 
                     @Override

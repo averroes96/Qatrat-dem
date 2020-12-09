@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> implements Filterable {
 
     private Context context;
-    ArrayList<User> users;
+    public ArrayList<User> users;
     ArrayList<User> filteredUsers;
 
     UserFilter filter;
