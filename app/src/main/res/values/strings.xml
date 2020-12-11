@@ -58,6 +58,8 @@
     <string name="contact_info">Contact information</string>
     <string name="this_is_desc">This is description...</string>
     <string name="prev_donations">Previous donations</string>
+    <string name="btn_text">Button text</string>
+    <string name="done">Done</string>
     <string-array name="genders">
         <item name="N/A">Not specified</item>
         <item name="male">Male</item>

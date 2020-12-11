@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.averroes.qatartdem.R;
+import com.averroes.qatartdem.includes.ProgressButton;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -28,13 +29,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public Button signupBtn,loginBtn;
-    public EditText emailTF,passwordTF;
-    public CheckBox rememberCB;
-    public TextView forgotPasswordTV;
+    private Button signupBtn;
+    private EditText emailTF,passwordTF;
+    private CheckBox rememberCB;
+    private TextView forgotPasswordTV;
+    private View loginBtn;
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private ProgressButton progressButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +45,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         signupBtn = findViewById(R.id.signupBtn);
-        loginBtn = findViewById(R.id.loginBtn);
         emailTF = findViewById(R.id.emailTF);
         passwordTF = findViewById(R.id.passwordTF);
         rememberCB = findViewById(R.id.rememberCB);
         forgotPasswordTV = findViewById(R.id.forgotPasswordTV);
+        loginBtn = findViewById(R.id.loginBtn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle(R.string.wait);
         progressDialog.setCanceledOnTouchOutside(false);
+        progressButton = new ProgressButton(LoginActivity.this, loginBtn);
+        progressButton.textView.setText(R.string.log_in);
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressButton.btnActivated();
                 GoToDonners();
             }
         });
@@ -86,16 +92,18 @@ public class LoginActivity extends AppCompatActivity {
 
         if(!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
             Toast.makeText(this, getString(R.string.enter_valid_email), Toast.LENGTH_LONG).show();
+            progressButton.btnFinished(getString(R.string.log_in));
             return;
         }
         if(TextUtils.isEmpty(passwordText)){
             Toast.makeText(this, getString(R.string.enter_password), Toast.LENGTH_LONG).show();
+            progressButton.btnFinished(getString(R.string.log_in));
             return;
         }
 
-        progressDialog.setMessage(getString(R.string.login_in));
-        progressDialog.show();
-        progressDialog.setCanceledOnTouchOutside(false);
+        //progressDialog.setMessage(getString(R.string.login_in));
+        //progressDialog.show();
+        //progressDialog.setCanceledOnTouchOutside(false);
 
         firebaseAuth.signInWithEmailAndPassword(emailText, passwordText)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -107,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressButton.btnFinished(getString(R.string.log_in));
                         Toast.makeText(LoginActivity.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
@@ -114,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void logIn() {
 
-        progressDialog.setMessage(getString(R.string.checking_user));
+        progressButton.textView.setText(getString(R.string.checking_user));
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
         databaseReference.orderByChild("uid").equalTo(firebaseAuth.getUid())
